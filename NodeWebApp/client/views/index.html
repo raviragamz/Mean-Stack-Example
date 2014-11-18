@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app="meeupApp">
+	<body>
+
+		<h1>Meetups</h1>
+
+		<!--Meetups view -->
+		<div ng-controller="meetupsController">
+			<h1> There are {{ meetups.length }} meetups.</h1>
+			<ul>
+				<li ng-repeat="meetup in meetups">
+					{{ meetup.name }}
+				</li>
+			</ul>
+
+			<form ng-submit="createMeetup()">
+				<input type="text" placeholder="Meetup name" ng-model="meetupName" />
+				<button type="submit">Add</button>
+			</form>
+		</div>
+
+		<!--To request below js files, we need to add route for controllers.Until then, we can use a shortcut using express.js -->
+		<script type="text/javascript" src="/js/libs/angular.js"></script>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-resource.js"></script>
+		<script type="text/javascript" src="/js/app.js"></script>
+		<script type="text/javascript" src="/js/controllers/meetups-controller.js"></script>
+	</body>
+</html>
